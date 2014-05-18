@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 
 public class Main {
 	
@@ -101,7 +103,43 @@ public class Main {
 		
 		
 		
+		System.out.println("Arrays.sort():");
+		System.arraycopy(losowa, 0, tab, 0, dlugosc);
+		long arraystart1 = System.nanoTime();
+		Arrays.sort(tab);
+		long arraystop1 = System.nanoTime();
+		System.out.println((arraystop1 - arraystart1)/1000000d + "ms");
+
+		System.arraycopy(rosnaca, 0, tab, 0, dlugosc);
+		long arraystart2 = System.nanoTime();
+		Arrays.sort(tab);
+		long arraystop2 = System.nanoTime();
+		System.out.println((arraystop2 - arraystart2)/1000000d + "ms");
+
+		System.arraycopy(malejaca, 0, tab, 0, dlugosc);
+		long arraystart3 = System.nanoTime();
+		Arrays.sort(tab);
+		long arraystop3 = System.nanoTime();
+		System.out.println((arraystop3 - arraystart3)/1000000d + "ms");
 		
+	System.out.printf("|%15s||%18s|%18s|%18s|%n","Algorytm","Losowe", "Rosnace", "Malejace");	
+	System.out.println("---------------------------------------------------------------------------");
+	System.out.printf("|%15s||%15.4f ms|%15.4f ms|%15.4f ms|%n","BubbleSort",(bubblestop1 - bubblestart1)/1000000d, (bubblestop2 - bubblestart2)/1000000d, (bubblestop3 - bubblestart3)/1000000d);	
+	System.out.printf("|%15s||%15.4f ms|%15.4f ms|%15.4f ms|%n", "SelectSort", (selectstop1 - selectstart1)/1000000d, (selectstop2 - selectstart2)/1000000d, (selectstop3 - selectstart3)/1000000d);
+	System.out.printf("|%15s||%15.4f ms|%15.4f ms|%15.4f ms|%n", "InsertSort", (insertstop1 - insertstart1)/1000000d, (insertstop2 - insertstart2)/1000000d, (insertstop3 - insertstart3)/1000000d);
+	System.out.printf("|%15s||%15.4f ms|%15.4f ms|%15.4f ms|%n", "ShellSort", (shellstop1 - shellstart1)/1000000d, (shellstop2 - shellstart2)/1000000d, (shellstop3 - shellstart3)/1000000d);
+	System.out.printf("|%15s||%15.4f ms|%15.4f ms|%15.4f ms|%n", "Arrays.sort", (arraystop1 - arraystart1)/1000000d, (arraystop2 - arraystart2)/1000000d, (arraystop3 - arraystart3)/1000000d);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	}
 	
 	
